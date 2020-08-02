@@ -1,30 +1,45 @@
-import {timeFormat} from '../utils.js';
+import {
+  timeFormat
+} from '../utils.js';
 import Player from "./player.js";
 
 export default class VideoPlayer extends Player {
-  constructor({container,
-              playButton,
-              player,
-              stopButton,
-              currentTime,
-              timeTotal,
-              progress,
-              volume,
-              volumeCurrent,
-              volumeBtns,
-              volumeUp,
-              volumeDown,
-              progressTiming,
-              fullScreenButton
-            }) {
-    super({container, playButton, player, volume, volumeCurrent, volumeBtns, volumeUp, volumeDown, currentTime, timeTotal, progressTiming});
+  constructor({
+    container,
+    playButton,
+    player,
+    stopButton,
+    currentTime,
+    timeTotal,
+    progress,
+    volume,
+    volumeCurrent,
+    volumeBtns,
+    volumeUp,
+    volumeDown,
+    progressTiming,
+    fullScreenButton
+  }) {
+    super({
+      container,
+      playButton,
+      player,
+      volume,
+      volumeCurrent,
+      volumeBtns,
+      volumeUp,
+      volumeDown,
+      currentTime,
+      timeTotal,
+      progressTiming
+    });
     this._stopButton = this._container.querySelector(stopButton);
     this._currentTime = this._container.querySelector(currentTime);
     this._timeTotal = this._container.querySelector(timeTotal);
     this._progress = this._container.querySelector(progress);
     this._progressTiming = this._container.querySelector(progressTiming);
     this._fullScreenButton = this._container.querySelector(fullScreenButton);
-    }
+  }
 
   stop() {
     this.pause();

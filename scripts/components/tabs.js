@@ -1,5 +1,10 @@
 export default class Tabs {
-  constructor({tab, tabContent, header, logo}) {
+  constructor({
+    tab,
+    tabContent,
+    header,
+    logo
+  }) {
     this._tab = document.querySelectorAll(tab);
     this._tabContent = document.querySelectorAll(tabContent);
     this._header = document.querySelector(header);

@@ -1,7 +1,8 @@
 import Player from "./player.js";
 
 export default class RadioPlayer extends Player {
-  constructor({container,
+  constructor({
+    container,
     playButton,
     navigation,
     items,
@@ -12,8 +13,18 @@ export default class RadioPlayer extends Player {
     volumeCurrent,
     volumeBtns,
     volumeUp,
-    volumeDown}) {
-    super({container, player, playButton, volume, volumeCurrent, volumeBtns, volumeUp, volumeDown});
+    volumeDown
+  }) {
+    super({
+      container,
+      player,
+      playButton,
+      volume,
+      volumeCurrent,
+      volumeBtns,
+      volumeUp,
+      volumeDown
+    });
     this._items = this._container.querySelectorAll(items);
     this._img = this._container.querySelector(img);
     this._header = this._container.querySelector(header);
@@ -21,7 +32,7 @@ export default class RadioPlayer extends Player {
   }
 
   togglePlay() {
-    if(this._player.paused) {
+    if (this._player.paused) {
       this._container.classList.add('play');
       this._playButton.classList.remove('fa-play');
       this._playButton.classList.add('fa-pause');
@@ -42,7 +53,7 @@ export default class RadioPlayer extends Player {
     this._playButton.disabled = false;
     this._items.forEach((item) => {
       item.classList.remove('select');
-      if(item.contains(target)) {
+      if (item.contains(target)) {
         item.classList.add('select');
         this._img.src = item.querySelector('img').src;
         this._header.textContent = item.querySelector('.radio-name').textContent;

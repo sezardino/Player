@@ -1,26 +1,41 @@
 import Player from "./player.js";
-import {timeFormat} from '../utils.js';
+import {
+  timeFormat
+} from '../utils.js';
 
 export default class AudioPlayer extends Player {
-  constructor({container,
-              playButton,
-              player,
-              img,
-              header,
-              navigation,
-              next,
-              prev,
-              progress,
-              volume,
-              volumeBtns,
-              volumeCurrent,
-              volumeUp,
-              volumeDown,
-              currentTime,
-              timeTotal,
-              progressTiming}
-              ) {
-    super({container, playButton, player, volume, volumeCurrent, volumeBtns, volumeUp, volumeDown, currentTime, timeTotal, progressTiming});
+  constructor({
+    container,
+    playButton,
+    player,
+    img,
+    header,
+    navigation,
+    next,
+    prev,
+    progress,
+    volume,
+    volumeBtns,
+    volumeCurrent,
+    volumeUp,
+    volumeDown,
+    currentTime,
+    timeTotal,
+    progressTiming
+  }) {
+    super({
+      container,
+      playButton,
+      player,
+      volume,
+      volumeCurrent,
+      volumeBtns,
+      volumeUp,
+      volumeDown,
+      currentTime,
+      timeTotal,
+      progressTiming
+    });
     this._img = this._container.querySelector(img);
     this._header = this._container.querySelector(header);
     this._navigation = this._container.querySelector(navigation);
@@ -42,25 +57,25 @@ export default class AudioPlayer extends Player {
   }
 
   next() {
-    if(this._trackIndex !== this._playList.length - 1) {
+    if (this._trackIndex !== this._playList.length - 1) {
       this._trackIndex++;
     } else {
       this._trackIndex = 0;
     }
     this.acivatePlayer();
-    if(this._isPlayed) {
+    if (this._isPlayed) {
       this.play();
     }
   }
 
   prev() {
-    if(this._trackIndex !== 0) {
+    if (this._trackIndex !== 0) {
       this._trackIndex--;
     } else {
       this._trackIndex = this._playList.length - 1;
     }
     this.acivatePlayer();
-    if(this._isPlayed) {
+    if (this._isPlayed) {
       this.play();
     }
   }
@@ -76,10 +91,10 @@ export default class AudioPlayer extends Player {
 
     this._navigation.addEventListener('click', (evt) => {
       const target = evt.target;
-      if(target === this._next) {
+      if (target === this._next) {
         this.next();
       }
-      if(target === this._prev) {
+      if (target === this._prev) {
         this.prev();
       }
     });

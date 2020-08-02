@@ -13,7 +13,7 @@ export const videoPlayer = () => {
   vp.volume = 0.5;
 
   const toggleIcon = () => {
-    if(vp.paused) {
+    if (vp.paused) {
       vpBtnPlay.classList.add('fa-pause');
       vpBtnPlay.classList.remove('fa-play');
     } else {
@@ -59,7 +59,7 @@ export const videoPlayer = () => {
   };
 
   const changeVolume = (n) => {
-    if(vp.volume + n * 0.1 < 0) {
+    if (vp.volume + n * 0.1 < 0) {
       vp.volume = 0;
     } else if (vp.volume + n * 0.1 > 1) {
       vp.volume = 1;

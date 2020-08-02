@@ -10,7 +10,7 @@ export const radioPlayer = () => {
   radioStop.disabled = true;
 
   const toggleStopButton = () => {
-    if(audio.paused) {
+    if (audio.paused) {
       radioContainer.classList.add('play');
       radioStop.classList.remove('fa-play');
       radioStop.classList.add('fa-pause');
@@ -31,7 +31,7 @@ export const radioPlayer = () => {
     radioStop.disabled = false;
     radioItems.forEach((item) => {
       item.classList.remove('select');
-      if(item.contains(target)) {
+      if (item.contains(target)) {
         item.classList.add('select');
         radioImg.src = item.querySelector('img').src;
         radioHeader.textContent = item.querySelector('.radio-name').textContent;

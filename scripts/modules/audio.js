@@ -30,7 +30,7 @@ export const audioPlayer = () => {
     audioPlayer.src = `/audio/${playList[trackIndex]}.mp3`;
     audioHeader.textContent = playList[trackIndex].toUpperCase();
 
-    if(isPlayed) {
+    if (isPlayed) {
       audioPlayer.pause();
     } else {
       audioPlayer.play();
@@ -40,7 +40,7 @@ export const audioPlayer = () => {
   const onAudioPlayClick = () => {
     audioContainer.classList.toggle('play');
     audioPlay.classList.toggle('fa-pause');
-    if(audioPlayer.paused) {
+    if (audioPlayer.paused) {
       audioPlayer.play();
     } else {
       audioPlayer.pause();
@@ -49,7 +49,7 @@ export const audioPlayer = () => {
   };
 
   const nextTrack = () => {
-    if(trackIndex !== playList.length - 1) {
+    if (trackIndex !== playList.length - 1) {
       trackIndex++;
     } else {
       trackIndex = 0;
@@ -58,7 +58,7 @@ export const audioPlayer = () => {
   };
 
   const prevTreck = () => {
-    if(trackIndex !== 0) {
+    if (trackIndex !== 0) {
       trackIndex--;
     } else {
       trackIndex = playList.length - 1;
@@ -69,11 +69,11 @@ export const audioPlayer = () => {
   const onAudioNavigationClick = (evt) => {
     const target = evt.target;
 
-    if(target.classList.contains('audio-button__prev')) {
+    if (target.classList.contains('audio-button__prev')) {
       prevTreck();
     }
 
-    if(target.classList.contains('audio-button__next')) {
+    if (target.classList.contains('audio-button__next')) {
       nextTrack();
     }
   };

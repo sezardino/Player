@@ -1,7 +1,10 @@
-import {timeFormat} from '../utils.js';
+import {
+  timeFormat
+} from '../utils.js';
 
 export default class Player {
-  constructor({container,
+  constructor({
+    container,
     playButton,
     player,
     volume,
@@ -11,7 +14,8 @@ export default class Player {
     volumeDown,
     progressTiming,
     currentTime,
-    timeTotal}) {
+    timeTotal
+  }) {
     this._container = document.querySelector(container);
     this._playButton = this._container.querySelector(playButton);
     this._player = player.tagName === 'AUDIO' ? new Audio() : this._container.querySelector(player);
@@ -45,7 +49,7 @@ export default class Player {
     this._isPlayed = this._player.paused;
     this._container.classList.toggle('play');
     this._playButton.classList.toggle('fa-pause');
-    if(this._isPlayed) {
+    if (this._isPlayed) {
       this.play();
     } else {
       this.pause();
@@ -81,10 +85,10 @@ export default class Player {
 
     this._volumeBtns.addEventListener('click', (evt) => {
       const target = evt.target;
-      if(target === this._volumeDown) {
+      if (target === this._volumeDown) {
         this.changeVolume(-1);
       }
-      if(target === this._volumeUp) {
+      if (target === this._volumeUp) {
         this.changeVolume(1);
       }
     });

@@ -1,7 +1,15 @@
-import {audioPlayer} from './modules/audio.js';
-import {radioPlayer} from './modules/radio.js';
-import {videoPlayer} from './modules/video.js';
-import {tabs} from './modules/tabs.js';
+import {
+  audioPlayer
+} from './modules/audio.js';
+import {
+  radioPlayer
+} from './modules/radio.js';
+import {
+  videoPlayer
+} from './modules/video.js';
+import {
+  tabs
+} from './modules/tabs.js';
 import AudioPlayer from './components/audioPlayer.js';
 import VideoPlayer from './components/videoPlayer.js';
 import RadioPlayer from './components/radioPlayer.js';
